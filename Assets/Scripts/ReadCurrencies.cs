@@ -12,6 +12,9 @@ public class ReadCurrencies : MonoBehaviour
 
     private string _path;
     private string _jsonString;
+
+    private const string DefaultFrom = "EUR";
+    private const string DefaultTo = "TRY";
     
     private void Start ()
     {
@@ -47,6 +50,15 @@ public class ReadCurrencies : MonoBehaviour
                 fromDropDown.AddOptions(new List<string> {currency});    
                 toDropDown.AddOptions(new List<string> {currency});    
             }
+            
+            
+            var indexFrom = fromDropDown.options.FindIndex((i) => i.text.Equals(DefaultFrom));
+            var indexTo = fromDropDown.options.FindIndex((i) => i.text.Equals(DefaultTo));
+
+            Debug.Log(indexFrom);
+        
+            fromDropDown.value = indexFrom;
+            toDropDown.value = indexTo;
         }
         else
         {
