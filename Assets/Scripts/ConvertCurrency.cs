@@ -38,7 +38,7 @@ public class ConvertCurrency : MonoBehaviour
         try
         {
             var amountVal = int.Parse(amount);
-            if (amountVal < 0)
+            if (amountVal <= 0)
             {
                 StartCoroutine(ShowError());
                 return;
@@ -80,6 +80,8 @@ public class ConvertCurrency : MonoBehaviour
 
     private IEnumerator ShowError()
     {
+        resultText.text = "";
+        
         _errorObject.SetActive(true);
         while (errorText.alpha > 0)
         {

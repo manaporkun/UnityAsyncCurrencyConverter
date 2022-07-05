@@ -51,12 +51,9 @@ public class ReadCurrencies : MonoBehaviour
                 toDropDown.AddOptions(new List<string> {currency});    
             }
             
-            
             var indexFrom = fromDropDown.options.FindIndex((i) => i.text.Equals(DefaultFrom));
             var indexTo = fromDropDown.options.FindIndex((i) => i.text.Equals(DefaultTo));
-
-            Debug.Log(indexFrom);
-        
+            
             fromDropDown.value = indexFrom;
             toDropDown.value = indexTo;
         }
@@ -65,25 +62,6 @@ public class ReadCurrencies : MonoBehaviour
             Debug.LogWarning(www.error);
         }
     }
-
-    #endregion
-
-    #region Offline
-
-    /*private void ReadFromFile()
-    {
-        _path = Application.dataPath + "/Resources/currencies.json";
-        _jsonString = File.ReadAllText (_path); 
-
-        var currencyDic = JsonConvert.DeserializeObject<Dictionary<string, string>>(_jsonString);
-
-        if (currencyDic == null) return;
-        foreach (var currency in currencyDic.Keys)
-        {
-            fromDropDown.AddOptions(new List<string> {currency});    
-            toDropDown.AddOptions(new List<string> {currency});    
-        }
-    }*/
 
     #endregion
 }
