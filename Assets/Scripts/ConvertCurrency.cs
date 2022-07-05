@@ -43,6 +43,8 @@ public class ConvertCurrency : MonoBehaviour
                 StartCoroutine(ShowError());
                 return;
             }
+			
+			resultText.text = "Loading...";
 
             var from = fromDropDown.options[fromDropDown.value].text;
             var to = toDropDown.options[toDropDown.value].text;
